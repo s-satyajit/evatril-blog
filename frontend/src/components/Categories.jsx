@@ -6,12 +6,14 @@ const Categories = () => {
 
   return (
     <>
-      <div className="bg-gray-200 p-8 my-50">
-        <h1 className="border-b-2 border-black pb-3">CATEGORIES</h1>
+      <div className="bg-gray-200 p-8 my-50 container mx-auto rounded-lg shadow-md">
+        <h1 className="border-b-2 border-black pb-3 text-medium font-bold">
+          CATEGORIES
+        </h1>
         <div className="py-2">
           {categories.map((category) => (
-            <div key={category.id} >
-                <li>{category.categoryName}</li>
+            <div key={category.id} className="py-1">
+              <li className="text-small">{category.categoryName}</li>
             </div>
           ))}
         </div>

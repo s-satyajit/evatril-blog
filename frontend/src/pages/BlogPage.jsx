@@ -97,7 +97,6 @@ const BlogPage = () => {
           <Categories />
         </div>
       </div>
-      {/* Additional components like RelatedBlogs can be added here */}
     </div>
   );
 };
