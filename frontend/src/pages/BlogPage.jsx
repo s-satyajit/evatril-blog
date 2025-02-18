@@ -52,7 +52,7 @@ const BlogPage = () => {
   const { blogs, loading, currentBlog, setCurrentBlog } = useBlogContext();
   const { slug } = useParams();
   const blog = blogs.find((blog) => blog.slug === slug);
-  setCurrentBlog(blog)
+  setCurrentBlog(blog);
 
   if (loading) return <div>Loading...</div>;
 
@@ -74,19 +74,23 @@ const BlogPage = () => {
             <img className="w-200 pb-5" src={blog.image2} alt="Blog Image 2" />
           </div>
           <div className="flex space-x-20 py-3">
-            {socialMedia.map(({ name, icon: Icon, color, hoverColor, ShareButton }) => (
-              <ShareButton
-                key={name}
-                url={currentPageUrl}
-                className={`px-8 flex items-center space-x-2 ${color} text-white p-2 rounded-sm ${hoverColor} focus:outline-none`}
-                aria-label={`Share on ${name.charAt(0).toUpperCase() + name.slice(1)}`}
-              >
-                <Icon /> <span>{name}</span>
-              </ShareButton>
-            ))}
+            {socialMedia.map(
+              ({ name, icon: Icon, color, hoverColor, ShareButton }) => (
+                <ShareButton
+                  key={name}
+                  url={currentPageUrl}
+                  className={`px-8 flex items-center space-x-2 ${color} text-white p-2 rounded-sm ${hoverColor} focus:outline-none`}
+                  aria-label={`Share on ${
+                    name.charAt(0).toUpperCase() + name.slice(1)
+                  }`}
+                >
+                  <Icon /> <span>{name}</span>
+                </ShareButton>
+              )
+            )}
           </div>
           <p className="pt-2 text-gray-700">#categoryHashtag</p>
-      <RelatedBlogs />
+          <RelatedBlogs />
         </div>
         <div className="col-span-2">
           <BlogList />

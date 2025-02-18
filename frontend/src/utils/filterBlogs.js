@@ -1,4 +1,3 @@
-// src/utils/filterBlogs.js
 export const filterBlogsByCategory = (blogs, category) => {
     return blogs.filter((blog) => blog.category === category);
   };
