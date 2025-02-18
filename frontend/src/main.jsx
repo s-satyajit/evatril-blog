@@ -1,13 +1,18 @@
+import { AnimatePresence } from "framer-motion";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
 import App from "./App.jsx";
 import { BlogProvider } from "./context/BlogProvider.jsx";
+import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BlogProvider>
-      <App />
+      <div className="app-container">
+        <AnimatePresence>
+          <App />
+        </AnimatePresence>
+      </div>
     </BlogProvider>
   </StrictMode>
 );

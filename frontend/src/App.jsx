@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { BlogProvider } from "./context/BlogProvider";
@@ -8,10 +9,12 @@ function App() {
   return (
     <BlogProvider>
       <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/blog/:slug" element={<BlogPage />} />
-        </Routes>
+        <AnimatePresence>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/blog/:slug" element={<BlogPage />} />
+          </Routes>
+        </AnimatePresence>
       </Router>
     </BlogProvider>
   );

@@ -8,31 +8,31 @@ import {
 
 const CompanyProfile = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-neutral-200 text-black p-4 container">
-      <div className="mb-6">
+    <div className="flex flex-col items-center justify-center h-auto md:h-screen bg-neutral-200 text-black p-4 container animate-fadeIn">
+      <div className="mb-6 animate-scaleIn">
         <img
           src="https://www.evatril.com/assets/logo-CRXzgGzX.png"
           alt="Evatril Logo"
-          className="rounded-full w-32 h-32 object-contain shadow-lg"
+          className="rounded-full w-32 h-32 md:w-48 md:h-48 object-contain shadow-lg"
         />
       </div>
 
-      <h1 className="text-2xl mb-2 text-medium font-bold">
+      <h1 className="text-2xl mb-2 text-medium font-bold animate-slideInDown">
         Hello, We are Evatril
       </h1>
 
-      <p className="text-center mb-6 max-w-xl text-small leading-relaxed">
+      <p className="text-center mb-6 max-w-xl text-small leading-relaxed animate-slideInLeft">
         We are a leading company in Event Industry. Innovation and excellence
         drive us to deliver the best products and services to our customers. Our
         mission is to make a positive impact in the world through our innovative
         solutions.
       </p>
 
-      <button className="bg-neutral-600 text-white py-2 px-4 rounded mb-6 hover:bg-blue-700">
+      <button className="bg-neutral-600 text-white py-2 px-4 rounded mb-6 hover:bg-blue-700 transform transition-transform duration-300 hover:scale-110 active:scale-90">
         About Us
       </button>
 
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 animate-fadeIn">
         <a
           href="https://www.facebook.com/evatril.in/"
           target="_blank"
