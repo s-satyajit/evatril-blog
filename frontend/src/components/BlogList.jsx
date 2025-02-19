@@ -12,29 +12,28 @@ const BlogList = () => {
   };
 
   return (
-    <>
-      <div className="border-b-2 pb-3 border-black text-medium font-bold">
+    <div className="bg-gray-200 p-4 rounded-xl">
+      <div className="border-b-2 pb-2 mb-3 border-[#ccc] text-medium font-bold text-[#6C7383]">
         RECENT POSTS
       </div>
-      <div className="border-b-2 border-black rounded-lg shadow-md">
-        {blogs.map((blog) => (
+      <div className="">
+        {blogs.slice(0, 4).reverse().map((blog) => (
           <div
             key={blog.id}
-            className="bg-gray-200 py-8 px-6 my-4 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fadeIn"
+            className="px-4 py-2 rounded-lg hover:shadow-lg transition-shadow duration-300 animate-fadeIn"
           >
             <div
               onClick={() => seeDetails(blog.slug)}
-              className="flex flex-col md:flex-row justify-between gap-4 my-6 cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
+              className="flex flex-col md:flex-row justify-between items-center gap-2 cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
             >
-              <div className="overflow-hidden">
-                <img
-                  className="h-auto w-full md:w-48 rounded-md transform transition-transform duration-300 hover:scale-110"
+              
+                <img 
+                  className="w-24 h-18 object-cover rounded-md transform transition-transform duration-300 hover:scale-110"
                   src={blog.image1}
                 />
-              </div>
               <div>
-                <p className="font-semibold text-small">{blog.title}</p>
-                <p className="py-1 text-small">{blog.date}</p>
+                <p className="font-semibold text-sm">{blog.title}</p>
+                <p className="py-1 text-xs text-[#6C7383]">Posted on {blog.date}</p>
                 <div
                   className="text-small"
                   dangerouslySetInnerHTML={{ __html: blog.content }}
@@ -44,7 +43,7 @@ const BlogList = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

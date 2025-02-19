@@ -5,7 +5,7 @@ import HeroSection from "../components/HeroSection";
 import { useBlogContext } from "../context/BlogProvider";
 
 const HomePage = () => {
-  const { blogs } = useBlogContext();
+  const { blogs,categories } = useBlogContext();
   const navigate = useNavigate();
   const handleSeeMore = (slug) => {
     navigate(`/blog/${slug}`);
@@ -13,12 +13,19 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center overflow-x-hidden animate-fadeIn">
-        <div className="w-full px-20 md:px-20 lg:px-16 xl:px-24">
+      <div className="flex flex-col items-center overflow-x-hidden animate-fadeIn md:px-20 lg:px-16 xl:px-24">
           <HeroSection />
-        </div>
-
-        <div className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-10 gap-4 md:px-8 lg:px-16 xl:px-1">
+          <div className="flex items-center justify-center animate-fadeIn">
+        {categories.map((category) => (
+          <button
+            key={category.categoryName}
+            className="bg-red-400 my-10 mx-6 p-7 rounded-sm text-white hover:bg-red-500 transition-colors duration-300"
+          >
+            {category.categoryName}
+          </button>
+        ))}
+      </div>
+        <div className="w-full grid grid-cols-1 md:grid-cols-10 gap-4">
           <div className="md:col-span-7">
             <h1 className="border-b-2 flex border-black pb-3 text-black text-center">
               LATEST POSTS
@@ -35,33 +42,38 @@ const HomePage = () => {
                     } animate-fadeIn`}
                     style={index === 0 ? { gridColumn: "span 2" } : {}}
                   >
-                    <div className="overflow-hidden">
+                    <div className="overflow-hidden w-full">
                       <img
                         src={blog.image1}
                         className="w-full h-auto object-cover transform transition-transform duration-300 hover:scale-110"
                       />
                     </div>
-                    <h2 className="text-xl font-bold my-4 text-center">
-                      {blog.title}
-                    </h2>
-                    <p className="text-xs text-gray-300 text-center">
-                      {blog.date}
-                    </p>
-                    <p className="m-4 text-center"
-                      dangerouslySetInnerHTML={{ __html: blog.paragraph1.substring(0, 200) + "..."}}
-                    >
-                    </p>
-                    <button
-                      className="my-4 px-4 py-2  bg-neutral-600 text-white rounded cursor-pointer hover:bg-blue-700 transform transition-transform duration-300 hover:scale-105"
-                      onClick={() => handleSeeMore(blog.slug)}
-                    >
-                      See More
-                    </button>
+                    <div className="flex flex-col items-center w-full px-4">
+                      <h2 className="text-xl font-bold my-4 text-center">
+                        {blog.title}
+                      </h2>
+                      <p className="text-sm text-gray-700 text-center">
+                        {blog.date}
+                      </p>
+                      <p
+                        className="m-4 text-center"
+                        dangerouslySetInnerHTML={{
+                          __html: blog.paragraph1.substring(0, 200) + "...",
+                        }}
+                      ></p>
+                      <a
+                        href="#"
+                        className="m-4 transition duration-300 hover:underline hover:scale-110"
+                        onClick={() => handleSeeMore(blog.slug)}
+                      >
+                        Read More...
+                      </a>
+                    </div>
                   </div>
                 ))}
             </div>
           </div>
-          <div className="md:col-span-3 px-4">
+          <div className="md:col-span-3">
             <CompanyProfile />
           </div>
         </div>

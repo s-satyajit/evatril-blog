@@ -2,35 +2,36 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  /* background-color: #f4f4f9;
+  color: #333; */
 }
 
-a {
+
+/* a {
   text-decoration: none;
   color: inherit;
-}
-
+} */
+/* 
 button {
   transition: background-color 0.3s ease;
-}
+} */
 
-button:hover {
+/* button:hover {
   background-color: #0056b3;
-}
+} */
 
-.container {
+/* .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
-}
+} */
 
-.app-container {
+/* .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-}
+} */
 
 @media (min-width: 768px) {
   .app-container {

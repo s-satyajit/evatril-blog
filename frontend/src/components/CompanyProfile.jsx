@@ -28,7 +28,7 @@ const CompanyProfile = () => {
         solutions.
       </p>
 
-      <button className="bg-neutral-600 text-white py-2 px-4 rounded mb-6 hover:bg-blue-700 transform transition-transform duration-300 hover:scale-110 active:scale-90">
+      <button className="bg-[#f55253] text-white fontbold py-2 px-4 rounded mb-6 hover:bg-blue-700 transform transition-transform duration-300 hover:scale-110 active:scale-90">
         About Us
       </button>
 

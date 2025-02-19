@@ -32,7 +32,7 @@ const HeroSection = ({ className }) => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="relative w-full h-96 md:h-screen overflow-hidden animate-fadeIn mt-8 md:mt-16 lg:mt-24">
+    <div className="relative overflow-hidden animate-fadeIn mt-8 md:mt-4 ">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -79,16 +79,7 @@ const HeroSection = ({ className }) => {
         ›
       </button>
 
-      <div className="flex items-center justify-center animate-fadeIn">
-        {categories.map((category) => (
-          <button
-            key={category.categoryName}
-            className="bg-red-400 my-10 mx-auto p-7 rounded-sm text-white hover:bg-red-500 transition-colors duration-300"
-          >
-            {category.categoryName}
-          </button>
-        ))}
-      </div>
+      
     </div>
   );
 };

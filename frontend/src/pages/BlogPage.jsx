@@ -16,6 +16,8 @@ import BlogList from "../components/BlogList";
 import Categories from "../components/Categories";
 import RelatedBlogs from "../components/RelatedBlogs";
 import { useBlogContext } from "../context/BlogProvider";
+import ThemeOne from "../blog-layouts/ThemeOne";
+import ThemeTwo from "../blog-layouts/ThemeTwo";
 
 const socialMedia = [
   {
@@ -61,15 +63,14 @@ const BlogPage = () => {
 
   return (
     <div className=" mx-auto px-4 md:px-24 py-5 animate-fadeIn">
-      <p className="text-center pt-10 text-sm text-gray-700">Venue</p>
       <h1
-        className="text-3xl text-center py-7"
+        className="text-3xl text-center py-3 "
         dangerouslySetInnerHTML={{ __html: blog.title }}
       ></h1>
-      <p className="text-center pb-10 text-sm text-gray-700">{blog.date}</p>
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-12">
-        <div className="col-span-1 md:col-span-4">
-          <div>
+      <p className="text-center pb-10 text-sm text-[#6C7383]">Posted on {blog.date}</p>
+      <div className="grid grid-cols-1 md:grid-cols-10 gap-12">
+        <div className="col-span-1 md:col-span-7">
+          {/* <div>
             <div className="w-full py-5" dangerouslySetInnerHTML={{ __html: blog.paragraph1 }}></div>
             <div className="overflow-hidden pb-5">
               <img className="w-full transform transition-transform duration-300 hover:scale-110" src={blog.image1} alt="Blog Image 1" />
@@ -78,27 +79,31 @@ const BlogPage = () => {
             <div className="overflow-hidden pb-5">
               <img className="w-full transform transition-transform duration-300 hover:scale-110" src={blog.image2} alt="Blog Image 2" />
             </div>
-          </div>
-          <div className="flex flex-wrap justify-center md:justify-start space-x-4 py-3">
+          </div> */}
+
+          {blog.theme === 1 && <ThemeOne blog={blog} />}
+          {blog.theme === 2 && <ThemeTwo blog={blog} />}
+
+          <div className="flex flex-wrap justify-center md:justify-start space-x-4 py-3 my-10">
             {socialMedia.map(({ name, icon: Icon, color, hoverColor, ShareButton }) => (
               <ShareButton
                 key={name}
                 url={currentPageUrl}
-                className={`px-4 md:px-8 flex items-center space-x-2 ${color} text-white p-2 rounded-sm ${hoverColor} focus:outline-none`}
-                aria-label={`Share on ${name}`}
+                className={`flex items-center space-x-2 ${color} text-white rounded-sm ${hoverColor} hover:scale-110 duration-300`}
+                style={{backgroundColor: color, color: "white", padding: "0.7rem 2rem"}}
+                title={`Share on ${name}`}
               >
                 <Icon /> <span>{name}</span>
               </ShareButton>
             ))}
           </div>
-          <p className="pt-2 text-gray-700">#categoryHashtag</p>
-          <RelatedBlogs />
         </div>
-        <div className="col-span-1 md:col-span-2">
+        <div className="col-span-1 md:col-span-3">
           <BlogList />
           <Categories />
         </div>
       </div>
+          <RelatedBlogs />
     </div>
   );
 };
