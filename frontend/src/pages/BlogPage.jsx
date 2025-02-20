@@ -5,19 +5,19 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
-import { useParams } from "react-router-dom";
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
   WhatsappShareButton,
 } from "react-share";
-import BlogList from "../components/BlogList";
-import Categories from "../components/Categories";
-import RelatedBlogs from "../components/RelatedBlogs";
-import { useBlogContext } from "../context/BlogProvider";
+import { useParams } from "react-router-dom";
 import ThemeOne from "../blog-layouts/ThemeOne";
 import ThemeTwo from "../blog-layouts/ThemeTwo";
+import CategoryList from "../components/CategoryList";
+import RecentBlogs from "../components/RecentBlogs";
+import RelatedBlogs from "../components/RelatedBlogs";
+import { useBlogContext } from "../context/BlogProvider";
 
 const socialMedia = [
   {
@@ -70,20 +70,8 @@ const BlogPage = () => {
       <p className="text-center pb-10 text-sm text-[#6C7383]">Posted on {blog.date}</p>
       <div className="grid grid-cols-1 md:grid-cols-10 gap-12">
         <div className="col-span-1 md:col-span-7">
-          {/* <div>
-            <div className="w-full py-5" dangerouslySetInnerHTML={{ __html: blog.paragraph1 }}></div>
-            <div className="overflow-hidden pb-5">
-              <img className="w-full transform transition-transform duration-300 hover:scale-110" src={blog.image1} alt="Blog Image 1" />
-            </div>
-            <div className="w-full py-5" dangerouslySetInnerHTML={{ __html: blog.paragraph2 }}></div>
-            <div className="overflow-hidden pb-5">
-              <img className="w-full transform transition-transform duration-300 hover:scale-110" src={blog.image2} alt="Blog Image 2" />
-            </div>
-          </div> */}
-
           {blog.theme === 1 && <ThemeOne blog={blog} />}
           {blog.theme === 2 && <ThemeTwo blog={blog} />}
-
           <div className="flex flex-wrap justify-center md:justify-start space-x-4 py-3 my-10">
             {socialMedia.map(({ name, icon: Icon, color, hoverColor, ShareButton }) => (
               <ShareButton
@@ -99,8 +87,8 @@ const BlogPage = () => {
           </div>
         </div>
         <div className="col-span-1 md:col-span-3">
-          <BlogList />
-          <Categories />
+          <RecentBlogs />
+          <CategoryList />
         </div>
       </div>
           <RelatedBlogs />

@@ -30,7 +30,10 @@ const RelatedBlogs = () => {
               onClick={() => seeDetails(blog.slug)}
               className="pt-8 pb-2 flex flex-col items-center cursor-pointer"
             >
-              <img className="w-auto" src={blog.image1} />
+              <div className="overflow-hidden">
+
+              <img className="w-auto hover:scale-110 transition-transform duration-300" src={blog.image1} />
+              </div>
               <h1 className="text-center py-3 font-bold">
                 {blog.title}
               </h1>

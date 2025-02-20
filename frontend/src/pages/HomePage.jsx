@@ -5,29 +5,45 @@ import HeroSection from "../components/HeroSection";
 import { useBlogContext } from "../context/BlogProvider";
 
 const HomePage = () => {
-  const { blogs,categories } = useBlogContext();
+  const { blogs, categories } = useBlogContext();
   const navigate = useNavigate();
+
   const handleSeeMore = (slug) => {
     navigate(`/blog/${slug}`);
+  };
+
+  const handleCategory = (slug) => {
+    navigate(`/category/${slug}`);
   };
 
   return (
     <>
       <div className="flex flex-col items-center overflow-x-hidden animate-fadeIn md:px-20 lg:px-16 xl:px-24">
-          <HeroSection />
-          <div className="flex items-center justify-center animate-fadeIn">
-        {categories.map((category) => (
-          <button
-            key={category.categoryName}
-            className="bg-red-400 my-10 mx-6 p-7 rounded-sm text-white hover:bg-red-500 transition-colors duration-300"
-          >
-            {category.categoryName}
-          </button>
-        ))}
-      </div>
-        <div className="w-full grid grid-cols-1 md:grid-cols-10 gap-4">
+        <HeroSection />
+        <div className="flex items-center my-6 justify-center animate-fadeIn gap-3">
+          {categories.map((category, index) => (
+            <div
+              key={index}
+              onClick={() => handleCategory(category.slug)}
+              className="overflow-hidden animate-sideInLeft cursor-pointer relative w-full hover:scale-105 transition-transform object-cover transform duration-300 shadow-lg"
+            >
+              <img
+                src={category.image}
+                className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110 opacity-85 grayscale-30 blur-[1.5px] "
+              />
+              <div className="absolute inset-0 bg-opacity-100 flex flex-col justify-center items-center text-white">
+                <p className="text-2xl font-bold animate-slideInDown">
+                  {category.categoryName}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex items-center my-6 justify-center animate-fadeIn">
+        </div>
+        <div className="w-full grid grid-cols-1 md:grid-cols-10 gap-8">
           <div className="md:col-span-7">
-            <h1 className="border-b-2 flex border-black pb-3 text-black text-center">
+            <h1 className="border-b-2 border-[#ccc] text-[#6C7383] pb-2 mb-1 text-medium font-bold">
               LATEST POSTS
             </h1>
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -37,7 +53,7 @@ const HomePage = () => {
                 .map((blog, index) => (
                   <div
                     key={index}
-                    className={`my-2 bg-neutral-200 text-black rounded-sm flex flex-col items-center ${
+                    className={`my-2 shadow-md text-black rounded-sm flex flex-col items-center ${
                       index === 0 ? "md:col-span-2 w-full" : "w-full"
                     } animate-fadeIn`}
                     style={index === 0 ? { gridColumn: "span 2" } : {}}

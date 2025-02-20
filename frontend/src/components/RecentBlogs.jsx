@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useBlogContext } from "../context/BlogProvider";
 
-const BlogList = () => {
+const RecentBlogs = () => {
   const { blogs } = useBlogContext();
 
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const BlogList = () => {
   };
 
   return (
-    <div className="bg-gray-200 p-4 rounded-xl">
+    <div className="bg-white p-4 rounded-sm shadow-md">
       <div className="border-b-2 pb-2 mb-3 border-[#ccc] text-medium font-bold text-[#6C7383]">
         RECENT POSTS
       </div>
@@ -47,4 +47,4 @@ const BlogList = () => {
   );
 };
 
-export default BlogList;
+export default RecentBlogs;

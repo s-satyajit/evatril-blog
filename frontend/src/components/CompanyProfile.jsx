@@ -8,31 +8,28 @@ import {
 
 const CompanyProfile = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-auto md:h-screen bg-neutral-200 text-black p-4 container animate-fadeIn">
-      <div className="mb-6 animate-scaleIn">
+    <div className="flex mt-15 rounded-sm flex-col items-center justify-center shadow-md text-black animate-fadeIn">
+      <div className="animate-scaleIn">
         <img
           src="https://www.evatril.com/assets/logo-CRXzgGzX.png"
           alt="Evatril Logo"
-          className="rounded-full w-32 h-32 md:w-48 md:h-48 object-contain shadow-lg"
+          className="w-24 h-24 md:w-32 object-contain"
         />
       </div>
 
-      <h1 className="text-2xl mb-2 text-medium font-bold animate-slideInDown">
-        Hello, We are Evatril
+      <h1 className="text-2xl mb-4 text-medium font-bold animate-slideInDown">
+        Thick Celebration, Click Evatril
       </h1>
 
-      <p className="text-center mb-6 max-w-xl text-small leading-relaxed animate-slideInLeft">
-        We are a leading company in Event Industry. Innovation and excellence
-        drive us to deliver the best products and services to our customers. Our
-        mission is to make a positive impact in the world through our innovative
-        solutions.
+      <p className="text-center mb-6 mx-5 max-w-xl text-small leading-relaxed animate-slideInLeft">
+      Evatril is a virtual event management platform offering a wide range of services for various occasions and gatherings. Our customizable menu items set us apart, ensuring a unique and hassle-free event hosting experience. Creating seamless events, unforgettable memories.
       </p>
 
       <button className="bg-[#f55253] text-white fontbold py-2 px-4 rounded mb-6 hover:bg-blue-700 transform transition-transform duration-300 hover:scale-110 active:scale-90">
         About Us
       </button>
 
-      <div className="flex space-x-4 animate-fadeIn">
+      <div className="flex space-x-4 mb-6 animate-fadeIn text-white">
         <a
           href="https://www.facebook.com/evatril.in/"
           target="_blank"

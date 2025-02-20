@@ -41,12 +41,12 @@ const HeroSection = ({ className }) => {
           <div
             onClick={() => handleSeeMore(post.slug)}
             key={index}
-            className="w-full md:w-1/2 h-full flex-shrink-0 relative items-center bg-gray-200 cursor-pointer animate-slideInLeft group overflow-hidden"
+            className="w-full md:w-1/2 h-[95vh] flex-shrink-0 relative items-center bg-gray-200 cursor-pointer animate-slideInLeft group overflow-hidden"
           >
             <img
               src={post.image1}
               alt={post.title}
-              className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+              className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110 blur-[1.5px]"
               onClick={() => handleSeeMore(post.slug)}
             />
             <div className="absolute inset-0 bg-opacity-100 flex flex-col justify-center items-center text-white">
