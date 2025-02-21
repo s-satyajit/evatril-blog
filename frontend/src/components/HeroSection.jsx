@@ -32,7 +32,7 @@ const HeroSection = ({ className }) => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="relative overflow-hidden animate-fadeIn mt-8 md:mt-4 ">
+    <div className="relative overflow-hidden animate-fadeIn mt-8 md:mt-4  ">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -49,7 +49,7 @@ const HeroSection = ({ className }) => {
               className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110 blur-[1.5px]"
               onClick={() => handleSeeMore(post.slug)}
             />
-            <div className="absolute inset-0 bg-opacity-100 flex flex-col justify-center items-center text-white">
+            <div className="absolute inset-0 bg-opacity-100 flex flex-col justify-center items-center text-white mx-4 text-center">
               <p className="text-sm mb-2">{post.category}</p>
               <h2 className="text-2xl font-bold animate-slideInDown">{post.title}</h2>
             </div>

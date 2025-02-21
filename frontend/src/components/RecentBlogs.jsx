@@ -24,7 +24,7 @@ const RecentBlogs = () => {
           >
             <div
               onClick={() => seeDetails(blog.slug)}
-              className="flex flex-col md:flex-row justify-between items-center gap-2 cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
+              className="flex flex-row justify-between items-center gap-2 cursor-pointer transform transition-transform duration-300 hover:scale-105 active:scale-95"
             >
               
                 <img 

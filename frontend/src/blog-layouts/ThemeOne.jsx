@@ -21,8 +21,7 @@ const ThemeOne = ({ blog }) => {
       {blog.videoUrl && (
         <div className="w-full flex justify-center my-5">
           <iframe
-            width="100%"
-            height="500"
+            className="w-full h-50 md:h-[500px]"
             src={blog.videoUrl}
             title="YouTube video player"
             frameBorder="0"
