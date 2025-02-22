@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CompanyProfile from "../components/CompanyProfile";
-import HeroSection from "../components/HeroSection";
 import { useBlogContext } from "../context/BlogProvider";
 import CategoryCarousel from "../components/CategoryCarousel";
+import Highlight from "../components/Highlight";
 
 const HomePage = () => {
   const { blogs, categories } = useBlogContext();
@@ -17,7 +17,7 @@ const HomePage = () => {
   return (
     <>
       <div className="flex flex-col items-center overflow-x-hidden animate-fadeIn px-2 md:px-20 lg:px-16 xl:px-24 ">
-        <HeroSection />
+        <Highlight />
         <CategoryCarousel />
         <div className="flex items-center my-6 justify-center animate-fadeIn"></div>
         <div className="w-full grid grid-cols-1 md:grid-cols-10 gap-8">

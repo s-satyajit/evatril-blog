@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useBlogContext } from "../context/BlogProvider";
 import { getRecentBlogs } from "../utils/filterBlogs";
 
-const HeroSection = ({ className }) => {
+const Highlight = ({ className }) => {
   const { blogs, loading, categories } = useBlogContext();
   const [currentIndex, setCurrentIndex] = useState(0);
   const recentBlogs = getRecentBlogs(blogs, 10);
@@ -78,10 +78,8 @@ const HeroSection = ({ className }) => {
       >
         ›
       </button>
-
-      
     </div>
   );
 };
 
-export default HeroSection;
+export default Highlight;

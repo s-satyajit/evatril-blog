@@ -219,6 +219,16 @@ app.get("/api/categories", (req, res) => {
   ]);
 });
 
+app.get("/api/details", (req, res) => {
+  res.json([
+    {
+      name: "The Rise of AI in Web Development",
+      slug: "how-to-stay-consistent-in-coding-284354",
+      
+    }
+  ])
+})
+
 app.listen(port, () => {
   console.log(`Server running on ${port}`);
 });
