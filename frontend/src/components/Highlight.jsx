@@ -24,11 +24,6 @@ const Highlight = ({ className }) => {
     return () => clearInterval(interval);
   }, [recentBlogs.length]);
 
-  useEffect(() => {
-    console.log(recentBlogs);
-    console.log(categories);
-  }, [recentBlogs]);
-
   if (loading) return <div>Loading...</div>;
 
   return (
