@@ -71,7 +71,6 @@ const CategoryPage = () => {
             <CategoryList />
           </div>
         </div>
-        {/* <RelatedBlogs /> */}
       </div>
     </>
   );

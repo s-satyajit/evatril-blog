@@ -8,7 +8,7 @@ import {
 
 const CompanyProfile = () => {
   return (
-    <div className="flex mt-15 rounded-sm flex-col items-center justify-center shadow-md text-black animate-fadeIn">
+    <div className="flex md:mt-15 rounded-sm flex-col items-center justify-center shadow-md text-black animate-fadeIn">
       <div className="animate-scaleIn">
         <img
           src="https://www.evatril.com/assets/logo-CRXzgGzX.png"
@@ -25,9 +25,9 @@ const CompanyProfile = () => {
       Evatril is a virtual event management platform offering a wide range of services for various occasions and gatherings. Our customizable menu items set us apart, ensuring a unique and hassle-free event hosting experience. Creating seamless events, unforgettable memories.
       </p>
 
-      <button className="bg-[#f55253] text-white fontbold py-2 px-4 rounded mb-6 hover:bg-blue-700 transform transition-transform duration-300 hover:scale-110 active:scale-90">
+      <a href="https://www.evatril.com/" className="bg-[#f55253] text-white fontbold py-2 px-4 rounded mb-6 hover:bg-black transform transition-transform duration-300 hover:scale-110 active:scale-90">
         About Us
-      </button>
+      </a>
 
       <div className="flex space-x-4 mb-6 animate-fadeIn text-white">
         <a

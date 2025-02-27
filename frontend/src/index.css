@@ -2,36 +2,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  /* background-color: #EDF4F2; */
-  /* color: #333; */
 }
-
-
-/* a {
-  text-decoration: none;
-  color: inherit;
-} */
-/* 
-button {
-  transition: background-color 0.3s ease;
-} */
-
-/* button:hover {
-  background-color: #0056b3;
-} */
-
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-} */
-
-/* .app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-} */
 
 @media (min-width: 768px) {
   .app-container {
@@ -40,7 +11,6 @@ button {
   }
 }
 
-/* Custom animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
