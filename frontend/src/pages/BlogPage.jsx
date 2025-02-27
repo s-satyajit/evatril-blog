@@ -72,7 +72,7 @@ const BlogPage = () => {
         <div className="col-span-1 md:col-span-7">
           {blog.theme === 1 && <ThemeOne blog={blog} />}
           {blog.theme === 2 && <ThemeTwo blog={blog} />}
-          <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-2 md:space-y-0 md:space-x-4 md:py-3 md:my-10">
+          <div className="flex flex-wrap justify-center md:justify-start space-x-4 py-3 my-10">
             {socialMedia.map(({ name, icon: Icon, color, hoverColor, ShareButton }) => (
               <ShareButton
                 key={name}
@@ -92,6 +92,9 @@ const BlogPage = () => {
         </div>
       </div>
           <RelatedBlogs />
+
+          {/* test */}
+          {/* test 2 */}
     </div>
   );
 };
